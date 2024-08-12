@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use("/auth", UserRouter);
 
 // Root Route - to display a message when the server is accessed at the root URL
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
   res.send("<h1>Server is running fine</h1>");
 });
 
