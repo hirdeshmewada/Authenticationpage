@@ -10,15 +10,20 @@ import { UserRouter } from "./routes/user.js";
 const app = express();
 
 // Middleware
-app.use(express.json());  // Add parentheses to call the function
-app.use(cors(
-  {origin:["http://localhost:5173"],
-  credentials:true  
-},
-));
-app.use(cookieParser())
+app.use(express.json());
+app.use(cors({
+  origin: ["http://localhost:5173"],
+  credentials: true  
+}));
+app.use(cookieParser());
+
 // Routes
 app.use("/auth", UserRouter);
+
+// Root Route - to display a message when the server is accessed at the root URL
+app.get("/", (req, res) => {
+  res.send("<h1>Server is running fine</h1>");
+});
 
 // Database Connection
 mongoose.connect(
