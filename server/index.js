@@ -22,7 +22,7 @@ app.use("/auth", UserRouter);
 
 // Database Connection
 mongoose.connect(
-  "mongodb+srv://hirdeshrajput143:Hirdesh123@cluster0.xxrqybj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+  process.env.MONGOOSEID,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

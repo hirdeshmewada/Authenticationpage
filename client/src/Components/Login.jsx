@@ -17,7 +17,7 @@ const Login = () => {
     })
       .then((response) => {
         if(response.data.status){
-        navigate('/home')
+        navigate('/')
       }
       })
       .catch((err) => {
@@ -45,7 +45,7 @@ const Login = () => {
         />
 
         <button type="submit">Login</button>
-
+        <Link to="/forgotPassword">Forgot Password</Link>
         <p>Don't Have an Account ? <Link to="/signup">Sign up</Link></p> 
       </form>
     </div>
